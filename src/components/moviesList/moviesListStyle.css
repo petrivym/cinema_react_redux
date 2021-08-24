@@ -1,0 +1,16 @@
+.pages {
+  margin: 20px 0;
+
+  .page {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 100%;
+    border: 1px solid silver;
+  }
+
+  .currentPage {
+    color: red;
+  }
+}
+
+
