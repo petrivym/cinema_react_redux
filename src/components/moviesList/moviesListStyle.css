@@ -1,16 +1,28 @@
 .pages {
-  margin: 20px 0;
+    margin: 20px 0;
+}
 
-  .page {
-    margin: 10px;
-    padding: 10px;
+.page {
+    padding: 5px 10px;
+    margin: 0 10px;
     border-radius: 100%;
     border: 1px solid silver;
-  }
+    cursor: pointer;
+}
+.page:hover{
+  background-color: cornflowerblue;
+  transition: background-color 200ms linear;
+  color: red;
+}
 
-  .currentPage {
+.currentPage {
     color: red;
-  }
+    padding: 5px 10px;
+    margin: 0 10px;
+    border-radius: 100%;
+    border: 1px solid silver;
+    cursor: pointer;
+  background-color: cornflowerblue;
 }
 
 

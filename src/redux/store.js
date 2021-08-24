@@ -1,4 +1,5 @@
-import {createStore} from "redux";
-import {reducer} from "./reducers/film.reducer";
+import {applyMiddleware, createStore} from "redux";
+import {rootReducer} from "./reducers";
+import thunk from "redux-thunk";
 
-export const store = createStore(reducer);
+export const store = createStore(rootReducer, applyMiddleware(thunk));

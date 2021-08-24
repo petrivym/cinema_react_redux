@@ -1,7 +1,29 @@
 import axios from "axios";
 
+const AUTH_TOKEN = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiOWFkZTgwZjNkMTEwZWI4NjE4ZjkxZDVmM2ZhOTAwZiIsInN1YiI6IjYwYzNjNDlhZGMxY2I0MDA2ZDRhYWE1NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9Ona2XveMNxwVnJ47-6HoFxD2AJrh6-G-BADg1OTgbM';
 
-export default axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com'
-})
+const axiosInstance = axios.create({
+    baseURL: 'https://api.themoviedb.org/3/movie',
+    headers: {'Authorization': AUTH_TOKEN}
+});
 
+
+const getTopRatedFilms = async (language = 'uk-UA', page = '1') => {
+    return await axiosInstance
+        .post(`/top_rated?language=${language}&page=${page}`)
+        .then(value => {
+            return value
+        });
+}
+
+const getPopularFilmsData = async (language = 'uk-UA', page = '1') => {
+    return await axiosInstance
+        .post(`/popular?language=${language}&page=${page}`)
+        .then(value => {
+            return value
+        });
+}
+export {
+    getPopularFilmsData,
+    getTopRatedFilms
+}

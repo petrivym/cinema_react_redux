@@ -1,8 +1,7 @@
-export default function Error(props) {
-            console.log(props);
+export default function NotFoundPage() {
     return (
         <div>
-            Error
+            Page not found
         </div>
     );
 }
