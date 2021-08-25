@@ -6,9 +6,9 @@ import {
 } from "../actionTypes";
 
 const initialState = {
-    popularFilmsInfo: [],
+    FilmsInfo: [],
     isLoading: true,
-    popularFilmError: null,
+    FilmsError: null,
     currentPage: 1,
     totalPages:0
 };
@@ -18,7 +18,7 @@ export const popularFilmReducer = (state = initialState, action) => {
         case SET_POPULAR_FILMS : {
             return {
                 ...state,
-                popularFilmsInfo: action.payload.filmInfo,
+                FilmsInfo: action.payload.filmInfo,
                 totalPages:action.payload.total_pages,
                 isLoading: false
             }
@@ -26,7 +26,7 @@ export const popularFilmReducer = (state = initialState, action) => {
         case SET_ERROR_POPULAR_FILMS: {
             return {
                 ...state,
-                popularFilmError: action.payload,
+                FilmError: action.payload,
                 isLoading: false
             }
         }

@@ -6,11 +6,10 @@ import {
 } from "../actionTypes";
 
 const initialState = {
-    topRatedFilmsInfo: [],
+    FilmsInfo: [],
     isLoading: true,
-    topRatedFilmsError: null,
+    FilmsError: null,
     currentPage: 1,
-    perPage: 10,
     totalPages: 0
 };
 
@@ -19,15 +18,15 @@ export const topRatedFilmReducer = (state = initialState, action) => {
         case SET_TOP_RATED_FILMS : {
             return {
                 ...state,
-                topRatedFilmsInfo: action.payload.filmInfo,
-                isLoading: false,
-                totalPages: action.payload.total_pages
+                FilmsInfo: action.payload.filmInfo,
+                totalPages: action.payload.total_pages,
+                isLoading: false
             }
         }
         case SET_ERROR_TOP_RATED_FILMS: {
             return {
                 ...state,
-                topRatedFilmsError: action.payload,
+                FilmsError: action.payload,
                 isLoading: false
             }
         }
@@ -36,7 +35,8 @@ export const topRatedFilmReducer = (state = initialState, action) => {
                 ...state,
                 currentPage: action.payload
             }
-        }    case RESET_FILMS_LOADING_TOP_RATED_FILMS: {
+        }
+        case RESET_FILMS_LOADING_TOP_RATED_FILMS: {
             return {
                 ...state,
                 isLoading: false

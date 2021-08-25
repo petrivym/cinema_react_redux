@@ -8,7 +8,7 @@ const axiosInstance = axios.create({
 });
 
 
-const getTopRatedFilms = async (language = 'uk-UA', page = '1') => {
+const getTopRatedFilmsData = async (language = 'uk-UA', page = '1') => {
     return await axiosInstance
         .post(`/top_rated?language=${language}&page=${page}`)
         .then(value => {
@@ -25,5 +25,5 @@ const getPopularFilmsData = async (language = 'uk-UA', page = '1') => {
 }
 export {
     getPopularFilmsData,
-    getTopRatedFilms
+    getTopRatedFilmsData
 }
