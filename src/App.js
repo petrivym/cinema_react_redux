@@ -5,6 +5,7 @@ import Home from "./pages/home/home";
 import NotFoundPage from "./components/notFoundPage/notFoundPage";
 import ErrorHandler from "./components/errorHendler/errorHandler";
 import MoviesList from "./components/moviesLists/moviesList/moviesList";
+import FilmForGenres from "./pages/filmForGanres/filmForGenres";
 
 
 function App() {
@@ -13,9 +14,9 @@ function App() {
             <Router>
                 <Switch>
                     <Route exact={true} path="/" component={Home}/>
-                    {/*<Route exact={true} path="/film/:id" render={(props) => (*/}
-                    {/*    <MoviesList {...props} />*/}
-                    {/*)}/>*/}
+                    <Route exact={true} path="/genres" render={(props) => (
+                        <FilmForGenres {...props} />
+                    )}/>
                     <Route path="/error" render={(props) => (
                         <ErrorHandler error={props}/>
                     )}/>

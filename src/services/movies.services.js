@@ -10,20 +10,24 @@ const axiosInstance = axios.create({
 
 const getTopRatedFilmsData = async (language = 'uk-UA', page = '1') => {
     return await axiosInstance
-        .post(`/top_rated?language=${language}&page=${page}`)
-        .then(value => {
-            return value
-        });
+        .post(`/top_rated?language=${language}&page=${page}`);
+
 }
 
 const getPopularFilmsData = async (language = 'uk-UA', page = '1') => {
     return await axiosInstance
-        .post(`/popular?language=${language}&page=${page}`)
-        .then(value => {
-            return value
-        });
+        .post(`/popular?language=${language}&page=${page}`);
+
 }
+
+const getGenresFilms = async (language = 'uk') => {
+    return await axiosInstance
+        .get(`https://api.themoviedb.org/3/genre/movie/list?language=${language}`);
+}
+
+
 export {
     getPopularFilmsData,
-    getTopRatedFilmsData
+    getTopRatedFilmsData,
+    getGenresFilms
 }

@@ -1,10 +1,18 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {getPopularFilms, getTopRatedFilms, setCurrentPagePopularFilms, setCurrentPageTopRatedFilms} from "../../redux";
+import {
+    getPopularFilms,
+    getTopRatedFilms,
+    setCurrentPagePopularFilms,
+    setCurrentPageTopRatedFilms,
+    setGenresForStore
+} from "../../redux";
 import MoviesList from "./moviesList/moviesList";
 
 export default function MoviesLists() {
     const dispatch = useDispatch();
+
+
 
     const filmPopularStore = useSelector(({filmPopularReducer}) => filmPopularReducer);
     const filmTopRatedStore = useSelector(({filmTopRatedReducer}) => filmTopRatedReducer);
@@ -12,6 +20,10 @@ export default function MoviesLists() {
     useEffect(() => {
         dispatch(getPopularFilms(filmPopularStore.currentPage));
     }, [filmPopularStore.currentPage]);
+
+    useEffect(()=>{
+        dispatch(setGenresForStore());
+    },[])
 
     useEffect(() => {
         dispatch(getTopRatedFilms(filmTopRatedStore.currentPage));

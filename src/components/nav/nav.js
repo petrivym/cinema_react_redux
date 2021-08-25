@@ -10,7 +10,7 @@ export default function Nav() {
                     <Link to="/" className="menu__link menu__link_active">Home</Link>
                 </li>
                 <li>
-                    <Link to="film/13" className="menu__link">Card List</Link>
+                    <Link to="genres" className="menu__link">filmForGenres</Link>
                 </li>
             </ul>
         </nav>

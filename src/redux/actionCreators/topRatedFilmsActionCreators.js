@@ -6,7 +6,6 @@ export const getTopRatedFilms = (page) => async (dispatch) => {
     try {
 
         const {data: {total_pages, results: filmInfo}} = await getTopRatedFilmsData('uk-UA', page);
-        console.log(filmInfo,total_pages);
         dispatch(setTopRatedFilms(filmInfo, total_pages));
     } catch (error) {
         dispatch(setErrorForTopRatedFilm(error));

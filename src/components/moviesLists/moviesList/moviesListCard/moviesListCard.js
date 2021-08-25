@@ -1,4 +1,10 @@
+import {generateGenresForFilm} from "../../../../helpers/generateGenresForFilm";
+import {useSelector} from "react-redux";
+
 export default function MoviesListCard({film}) {
+    const {genres} = useSelector(({genresStoreFilms}) => genresStoreFilms)
+
+    const currentGenres = generateGenresForFilm(film.genre_ids, genres);
     return (
         <div className="MoviesListCard">
             <div className="MoviesListCard-Container">
@@ -12,7 +18,10 @@ export default function MoviesListCard({film}) {
                         </h2>
                     </div>
                     <div className="MoviesListCard-genres-lists">
-                        {film.genre_ids}
+                        {
+                            currentGenres.map((value) => <span> {value} </span>)
+                        }
+
                     </div>
 
                 </div>
