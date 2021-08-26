@@ -5,7 +5,7 @@ import MoviesLists from "../../components/moviesLists/moviesLists";
 export default function Home() {
     return (
         <>
-                <Header/>
+            <Header/>
             <MoviesLists/>
             <Footer/>
         </>

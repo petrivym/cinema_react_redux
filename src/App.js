@@ -14,9 +14,7 @@ function App() {
             <Router>
                 <Switch>
                     <Route exact={true} path="/" component={Home}/>
-                    <Route exact={true} path="/genres" render={(props) => (
-                        <FilmForGenres {...props} />
-                    )}/>
+                    <Route exact={true} path="/genres" component={FilmForGenres}/>
                     <Route path="/error" render={(props) => (
                         <ErrorHandler error={props}/>
                     )}/>

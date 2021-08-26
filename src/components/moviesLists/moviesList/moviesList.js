@@ -15,6 +15,8 @@ export default function MoviesList({filmStore, pagination}) {
     const pages = [];
     generatePaginationPagesArray(pages, totalPages, currentPage);
 
+    console.log(pages);
+
     if (isLoading) {
         return (
             <h1>Loading</h1>

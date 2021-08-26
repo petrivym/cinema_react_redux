@@ -20,14 +20,20 @@ const getPopularFilmsData = async (language = 'uk-UA', page = '1') => {
 
 }
 
-const getGenresFilms = async (language = 'uk') => {
+const getGenres = async (language = 'uk') => {
     return await axiosInstance
         .get(`https://api.themoviedb.org/3/genre/movie/list?language=${language}`);
+}
+
+const getGenresFilms = async (page = 1, id = 23) => {
+    return await axiosInstance
+        .get(`https://api.themoviedb.org/3/discover/movie?page=${page}&sort_by=popularity.desc&with_genres=${id}`);
 }
 
 
 export {
     getPopularFilmsData,
     getTopRatedFilmsData,
+    getGenres,
     getGenresFilms
 }
