@@ -14,7 +14,7 @@ const initialState = {
     currentPage: 1,
     totalPages: 0,
     isLoading: true,
-    currentGenres: 23
+    currentGenres: '28'
 };
 
 

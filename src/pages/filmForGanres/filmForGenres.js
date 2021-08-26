@@ -30,7 +30,8 @@ export default function FilmForGenres() {
         dispatch(setCurrentPageGenresFilms(page));
     }
 
-
+console.log(genresStoreFilms);
+console.log(currentGenres);
     return (
         <div>
             <Header/>

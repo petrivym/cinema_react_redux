@@ -25,9 +25,9 @@ const getGenres = async (language = 'uk') => {
         .get(`https://api.themoviedb.org/3/genre/movie/list?language=${language}`);
 }
 
-const getGenresFilms = async (page = 1, id = 23) => {
+    const getGenresFilms = async (page, genres) => {
     return await axiosInstance
-        .get(`https://api.themoviedb.org/3/discover/movie?page=${page}&sort_by=popularity.desc&with_genres=${id}`);
+        .get(`https://api.themoviedb.org/3/discover/movie?page=${page}&sort_by=popularity.desc&with_genres=${genres}`);
 }
 
 

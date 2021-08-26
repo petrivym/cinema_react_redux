@@ -19,7 +19,7 @@ export const setGenresForStore = () => async (dispatch) => {
     }
 }
 
-export const setFilmByGenres = (page = 1, genres = 23) => async (dispatch) => {
+export const setFilmByGenres = (page, genres) => async (dispatch) => {
     try {
         const {data: {total_pages, results: filmInfo}} = await getGenresFilms(page, genres);
         dispatch(setFilmsByGenres(total_pages, filmInfo));
